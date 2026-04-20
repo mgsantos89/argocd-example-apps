@@ -9,6 +9,12 @@ spec:
     repoURL: https://github.com/mgsantos89/argocd-example-apps.git
     targetRevision: HEAD
     path: helm-guestbook
+    helm:
+      valueFiles:
+        - values.yaml
+      valuesObject:
+        fullnameOverride: guestbook-ui
+      
   destination:
     server: https://kubernetes.default.svc
     namespace: default
